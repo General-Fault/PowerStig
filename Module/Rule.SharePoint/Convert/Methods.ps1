@@ -203,7 +203,301 @@ function Get-PermissionSetScript
 
 #End Permissions region
 
+#Begin SharePointRule region
 
+function Get-SharePointRuleGetScript
+{
+    [CmdletBinding()]
+    [OutputType([string])]
+    [CmdletBinding()]
+    param
+    (
+        [Parameter(Mandatory = $false)]
+        [AllowEmptyString()]
+        $CheckContent
+    )
+
+    return
+}
+
+<#
+    .SYNOPSIS
+        Placeholder for SharePointRuleTestScript
+
+    .DESCRIPTION
+        
+    .PARAMETER CheckContent
+        
+#>
+
+function Get-SharePointRuleTestScript
+{
+    [CmdletBinding()]
+    [OutputType([string])]
+    [CmdletBinding()]
+    param
+    (
+        [Parameter(Mandatory = $false)]
+        [AllowEmptyString()]
+        $CheckContent
+    )
+
+        return
+    
+}
+
+<#
+    .SYNOPSIS Get-SharePointRuleSetScript
+        Placeholder for SharePointRuleSetScript
+    .DESCRIPTION
+        
+    .PARAMETER FixText
+        
+
+    .PARAMETER CheckContent
+        
+#>
+
+function Get-SharePointRuleSetScript
+{
+    [CmdletBinding()]
+    [OutputType([string])]
+    [CmdletBinding()]
+    param
+    (
+        [Parameter()]
+        [AllowEmptyString()]
+        [string[]]
+        $FixText,    
+
+        [Parameter(Mandatory = $false)]
+        [AllowEmptyString()]
+        $CheckContent
+    )
+
+        return
+}
+
+#End SharePointRule region
+
+#Begin SPIrmSettingsRule region
+
+<#
+        .SYNOPSIS
+            This is a placeholder for the SPIrmSettingsRuleGetScript block.
+        
+        .DESCRIPTION
+            
+        
+        .PARAMETER CheckContent
+            
+#>
+
+function Get-SPIrmSettingsGetScript
+{
+    [CmdletBinding()]
+    [OutputType([string])]
+    [CmdletBinding()]
+    param
+    (
+        [Parameter()]
+        [AllowEmptyString()]
+        [string[]]
+        $FixText,
+
+        [Parameter(Mandatory = $false)]
+        [AllowEmptyString()]
+        $CheckContent
+    )
+
+    return
+}
+
+<#
+        .SYNOPSIS
+            This is a placeholder for the SPIrmSettingsRuleSetScript block.
+        
+        .DESCRIPTION
+            
+        
+        .PARAMETER CheckContent
+            
+#>
+
+function Get-SPIrmSettingsSetScript
+{
+    [CmdletBinding()]
+    [OutputType([string])]
+    [CmdletBinding()]
+    param
+    (
+        [Parameter()]
+        [AllowEmptyString()]
+        [string[]]
+        $FixText,
+
+        [Parameter(Mandatory = $false)]
+        [AllowEmptyString()]
+        $CheckContent
+    )
+
+    return
+}
+
+<#
+        .SYNOPSIS
+            This is a placeholder for the SPIrmSettingsRuleTestScript block.
+        
+        .DESCRIPTION
+            
+        
+        .PARAMETER CheckContent
+            
+#>
+
+function Get-SPIrmSettingsTestScript
+{
+    [CmdletBinding()]
+    [OutputType([string])]
+    [CmdletBinding()]
+    param
+    (
+        [Parameter()]
+        [AllowEmptyString()]
+        [string[]]
+        $FixText,
+
+        [Parameter(Mandatory = $false)]
+        [AllowEmptyString()]
+        $CheckContent
+    )
+
+    return
+}
+
+#End SPIrmSettingsRule region
+
+#Begin SPSiteRule region
+
+function Get-SPSiteGetScript
+{
+    [CmdletBinding()]
+    [OutputType([string])]
+    [CmdletBinding()]
+    param
+    (
+        [Parameter()]
+        [AllowEmptyString()]
+        [string[]]
+        $FixText,
+
+        [Parameter(Mandatory = $false)]
+        [AllowEmptyString()]
+        $CheckContent
+    )
+
+    return
+}
+
+function Get-SPSiteSetScript
+{
+    [CmdletBinding()]
+    [OutputType([string])]
+    [CmdletBinding()]
+    param
+    (
+        [Parameter()]
+        [AllowEmptyString()]
+        [string[]]
+        $FixText,
+
+        [Parameter(Mandatory = $false)]
+        [AllowEmptyString()]
+        $CheckContent
+    )
+
+    return
+}
+
+function Get-SPSiteTestScript
+{
+    [CmdletBinding()]
+    [OutputType([string])]
+    [CmdletBinding()]
+    param
+    (
+        [Parameter()]
+        [AllowEmptyString()]
+        [string[]]
+        $FixText,
+
+        [Parameter(Mandatory = $false)]
+        [AllowEmptyString()]
+        $CheckContent
+    )
+
+    return
+}
+
+#End SPSiteRule region
+
+#Begin SqlServerRole region
+function Get-SqlServerRoleGetScript
+{
+    [CmdletBinding()]
+    [OutputTYpe([string])]
+    [CmdletBinding()]
+    [CmdletBinding()]
+    param (
+        [Parameter()]
+        [AllowEmptyString()]
+        [string[]]
+        $FixText,
+
+        [Parameter(Mandatory = $false)]
+        [AllowEmptyString()]
+        $CheckContent
+    )
+}
+
+function Get-SqlServerRoleSetScript
+{
+    [CmdletBinding()]
+    [OutputTYpe([string])]
+    [CmdletBinding()]
+    [CmdletBinding()]
+    param (
+        [Parameter()]
+        [AllowEmptyString()]
+        [string[]]
+        $FixText,
+
+        [Parameter(Mandatory = $false)]
+        [AllowEmptyString()]
+        $CheckContent
+    )
+}
+
+function Get-SqlServerRoleTestScript
+{
+    [CmdletBinding()]
+    [OutputTYpe([string])]
+    [CmdletBinding()]
+    [CmdletBinding()]
+    param (
+        [Parameter()]
+        [AllowEmptyString()]
+        [string[]]
+        $FixText,
+
+        [Parameter(Mandatory = $false)]
+        [AllowEmptyString()]
+        $CheckContent
+    )
+}
+
+#End SqlServerRole region
+#>
 
 #Begin Manual region
 
@@ -241,31 +535,46 @@ function Get-SharePointRuleSubType
     {
         
         {
-            $PSItem -Match 'DoDI 8552.01' -or #V-59957
-            $PSItem -Match 'session time-out' -or #V-59919
-            $PSItem -Match 'Unique session IDs' -or #V-59977
-            $PSItem -Match 'MSNBC online gallery' #V-59991
+            $PSItem -Match "DoDI 8552.01" -or #V-59957
+            $PSItem -Match "session time-out" -or #V-59919
+            $PSItem -Match "Unique session IDs" -or #V-59977
+            $PSItem -Match "MSNBC online gallery" #V-59991
         }
         {
-            $ruleType = 'SPWebAppGeneralSettings'
+            $ruleType = "SPWebAppGeneralSettings"
         }
-        # information rights management/DocumentRule
+
         {
-            $PSItem -Match 'AD DS console' -and
-            $PSItem -Match 'WSS_WPG'
-            
+            $PSItem -Match "Active Directory Users and Computers" -or #V-59997, V-60001
+            $PSItem -Match "WSS_RESTRICTED_WPG" #V-60391
         }
         {
-            $ruleType = 'ActiveDirectoryDsc'
+            $ruleType = "ActiveDirectoryDsc"
         }
-                
+
+        {
+            $PSItem -Match "SQL Server Management Console" #V-59999, V-60003
+        }
+        {
+            $ruleType = "SqlServerDsc" #SqlServerDsc > ServerRole
+        }
+
+        {
+            $PSItem -Match "Configure information rights management" -or #V-59941, 59945, 59947, 59973
+            $PSItem -Match "isolation boundary" #V-59981, V-59983
+        }
+        {
+            $ruleType = "SPIrmSettings"
+        }
+        
+        
         <#
             Default parser if not caught before now - if we end up here we haven't trapped for the rule sub-type.
             These should be able to get, test, set via Get-Query cleanly
         #>
         default
         {
-            $ruleType = 'ManualRule'
+            $ruleType = 'Manual'
         }
     }
 

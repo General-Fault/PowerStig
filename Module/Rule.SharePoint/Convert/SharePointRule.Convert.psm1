@@ -17,7 +17,7 @@ foreach ($supportFile in $supportFileList)
     .SYNOPSIS
         Convert the contents of an xccdf check-content element into a SharePointRule object
     .DESCRIPTION
-        The SharePointRuleConvert class is used to extract the SharePoint Settings from
+        The SharePointRule class is used to extract the SharePoint Settings from
         the check-content of the xccdf. Once a STIG rule is identified as an
         SharePoint rule, it is passed to the SharePointRuleConvert class for parsing
         and validation.
@@ -176,7 +176,12 @@ Class SharePointRuleConvert : SharePointRule
             $CheckContent -Match "DoDI 8552.01" -or #V-59957
             $CheckContent -Match "session time-out" -or #V-59919
             $CheckContent -Match "Unique session IDs" -or #V-59977
-            $CheckContent -Match "MSNBC online gallery" #V-59991
+            $CheckContent -Match "MSNBC online gallery" -or #V-59991
+            $CheckContent -Match "Configure information rights management" -or #V-59941, V-59945, V-59947, V-59973
+            $CheckContent -Match "isolation boundary" -or #V-59981, V-59983
+            $CheckContent -Match "SharePoint site collection administrator" -or #V-60007
+            $CheckContent -Match "SQL Server Management Console" #-or #V-59999, V-60003
+            <#continue with adding statements that match anything that would be a SP rule#>
         )
         {
             return $true
@@ -186,5 +191,3 @@ Class SharePointRuleConvert : SharePointRule
 
     #endregion
 }
-
-
