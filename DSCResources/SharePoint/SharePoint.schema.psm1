@@ -77,4 +77,5 @@ configuration SharePoint
     
     Import-DscResource -ModuleName SqlServerDsc -ModuleVersion 13.2.0.0
     . "$resourcePath\SqlServerDsc.ps1"
+    
 }

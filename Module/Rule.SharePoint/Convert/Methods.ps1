@@ -6,7 +6,7 @@
 
 <#
         .SYNOPSIS
-            This is a placeholder for the DocumentRuleGetScript block.
+            This is a placeholder for the SPWebAppGeneralSettingsRuleGetScript block.
         
         .DESCRIPTION
             
@@ -14,8 +14,8 @@
         .PARAMETER CheckContent
             
 #>
-
-function Get-DocumentRuleGetScript
+#update this for SPWebAppGeneralSettings Get/Test/Set scripts
+function Get-SPWebAppGeneralSettingsRuleGetScript
 {
     [CmdletBinding()]
     [OutputType([string])]
@@ -32,7 +32,7 @@ function Get-DocumentRuleGetScript
 
 <#
     .SYNOPSIS
-        Placeholder for DocumentRuleTestScript
+        Placeholder for SPWebAppGeneralSettingsRuleTestScript
 
     .DESCRIPTION
         
@@ -40,7 +40,7 @@ function Get-DocumentRuleGetScript
         
 #>
 
-function Get-DocumentRuleTestScript
+function Get-SPWebAppGeneralSettingsRuleTestScript
 {
     [CmdletBinding()]
     [OutputType([string])]
@@ -57,8 +57,8 @@ function Get-DocumentRuleTestScript
 }
 
 <#
-    .SYNOPSIS Get-DocumentRuleSetScript
-        Placeholder for DocumentRuleSetScript
+    .SYNOPSIS Get-SPWebAppGeneralSettingsRuleSetScript
+        Placeholder for SPWebAppGeneralSettingsRuleSetScript
     .DESCRIPTION
         
     .PARAMETER FixText
@@ -68,7 +68,7 @@ function Get-DocumentRuleTestScript
         
 #>
 
-function Get-DocumentRuleSetScript
+function Get-SPWebAppGeneralSettingsRuleSetScript
 {
     [CmdletBinding()]
     [OutputType([string])]
@@ -88,7 +88,7 @@ function Get-DocumentRuleSetScript
         return
 }
 
-#End Document region
+#End SPWebAppGeneralSettings region
 
 #Begin Permissions region
 
@@ -544,7 +544,7 @@ function Get-SharePointRuleSubType
             $ruleType = "SPWebAppGeneralSettings"
         }
 
-        {
+        <# {
             $PSItem -Match "Active Directory Users and Computers" -or #V-59997, V-60001
             $PSItem -Match "WSS_RESTRICTED_WPG" #V-60391
         }
@@ -566,7 +566,7 @@ function Get-SharePointRuleSubType
         {
             $ruleType = "SPIrmSettings"
         }
-        
+         #>
         
         <#
             Default parser if not caught before now - if we end up here we haven't trapped for the rule sub-type.

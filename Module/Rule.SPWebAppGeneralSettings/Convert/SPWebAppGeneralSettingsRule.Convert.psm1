@@ -1,7 +1,7 @@
 # Copyright (c) Microsoft Corporation. All rights reserved.
 # Licensed under the MIT License.
 using module .\..\..\Common\Common.psm1
-using module .\..\SharePointRule.psm1
+using module .\..\SPWebAppGeneralSettingsRule.psm1
 
 
 $exclude = @($MyInvocation.MyCommand.Name,'Template.*.txt')
@@ -22,13 +22,13 @@ foreach ($supportFile in $supportFileList)
         SharePoint rule, it is passed to the SharePointRuleConvert class for parsing
         and validation.
 #>
-Class SharePointRuleConvert : SharePointRule
+Class SPWebAppGeneralSettingsRuleConvert : SPWebAppGeneralSettingsRule
 {
     <#
         .SYNOPSIS
             Empty constructor for SplitFactory
     #>
-    SharePointRuleConvert ()
+    SPWebAppGeneralSettingsRuleConvert ()
     {
     }
 
@@ -38,10 +38,10 @@ Class SharePointRuleConvert : SharePointRule
         .PARAMETER XccdfRule
             The STIG rule to convert
     #>
-    SharePointRuleConvert ([xml.xmlelement] $XccdfRule) : Base ($XccdfRule, $true)
+    SPWebAppGeneralSettingsRuleConvert ([xml.xmlelement] $XccdfRule) : Base ($XccdfRule, $true)
     {
         $ruleType = $this.GetRuleType($this.splitCheckContent)
-        $fixText = [SharePointRule]::GetFixText($XccdfRule)
+        $fixText = [SPWebAppGeneralSettingsRule]::GetFixText($XccdfRule)
 
         $this.SetGetScript($ruleType)
         $this.SetTestScript($ruleType)
@@ -148,7 +148,7 @@ Class SharePointRuleConvert : SharePointRule
     #>
     [string] GetRuleType ([string[]] $CheckContent)
     {
-        $ruleType = Get-SharePointRuleSubType -CheckContent $CheckContent
+        $ruleType = Get-SPWebAppGeneralSettingsRuleType -CheckContent $CheckContent
 
         return $ruleType
     }
@@ -157,7 +157,7 @@ Class SharePointRuleConvert : SharePointRule
     {
         if($null -eq $this.DuplicateOf)
         {
-            $this.DscResource = 'SharePoint'
+            $this.DscResource = 'SPWebAppGeneralSettings'
         }
         else
         {
