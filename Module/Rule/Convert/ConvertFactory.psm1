@@ -199,24 +199,18 @@ class ConvertFactory
                     [SplitFactory]::XccdfRule($Rule, 'ServiceRuleConvert', 'ServiceName')
                 )
             }
-            
-            
             {[SPWebAppGeneralSettingsRuleConvert]::Match($PSItem)}
             {
                 $null = $ruleTypeList.Add(
                     [SPWebAppGeneralSettingsRuleConvert]::new($Rule).AsRule()
                 )
             }
-            #>
-
-            <#
-            {[SharePointRuleConvert]::Match($PSItem)}
+            <#{[SharePointRuleConvert]::Match($PSItem)}
             {
                 $null = $ruleTypeList.Add(
                     [SharePointRuleConvert]::new($Rule).AsRule()
                 )
-            }
-            #>
+            }#>
             {[SqlScriptQueryRuleConvert]::Match($PSItem)}
             {
                 $null = $ruleTypeList.Add(
