@@ -148,7 +148,7 @@ Class SPWebAppGeneralSettingsRuleConvert : SPWebAppGeneralSettingsRule
     #>
     [string] GetRuleType ([string[]] $CheckContent)
     {
-        $ruleType = Get-SPWebAppGeneralSettingsRuleType -CheckContent $CheckContent
+        $ruleType = Get-SPWebAppGeneralSettingsRuleSubType -CheckContent $CheckContent
 
         return $ruleType
     }

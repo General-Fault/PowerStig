@@ -14,7 +14,7 @@
         .PARAMETER CheckContent
             
 #>
-#update this for SPWebAppGeneralSettings Get/Test/Set scripts
+
 function Get-SPWebAppGeneralSettingsRuleGetScript
 {
     [CmdletBinding()]
@@ -85,6 +85,7 @@ function Get-SPWebAppGeneralSettingsRuleSetScript
 
 #End Manual region
 
+
 #Begin RuleType region
 
 <#
@@ -98,7 +99,7 @@ function Get-SPWebAppGeneralSettingsRuleSetScript
         This is the 'CheckContent' derived from the STIG raw string and holds the query that will be returned
 #>
 
-function Get-SharePointRuleSubType
+function Get-SPWebAppGeneralSettingsRuleSubType
 {
     [CmdletBinding()]
     [OutputType([string])]

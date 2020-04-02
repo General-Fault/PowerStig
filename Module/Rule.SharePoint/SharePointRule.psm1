@@ -56,7 +56,7 @@ Class SharePointRule : Rule
 
     <#
         .SYNOPSIS
-            Creates class specifc help content
+            Creates class specific help content
     #>
     [PSObject] GetExceptionHelp()
     {
