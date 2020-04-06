@@ -173,18 +173,10 @@ Class SharePointRuleConvert : SharePointRule
         #>
         if
         (
-            $CheckContent -Match "DoDI 8552.01" #-or #V-59957
-            #$CheckContent -Match "session time-out" -or #V-59919
-            #$CheckContent -Match "Unique session IDs" -or #V-59977
-            #$CheckContent -Match "MSNBC online gallery" #-or #V-59991
-            #$CheckContent -Match "Configure information rights management" -or #V-59941, V-59945, V-59947, V-59973 #get more specific match statement
-            #$CheckContent -Match "isolation boundary" -or #V-59981, V-59983
-            #$CheckContent -Match "SharePoint site collection administrator" -or #V-60007
-            #$CheckContent -Match "SQL Server Management Console" #-or #V-59999, V-60003 #get more specific match statement
-
-            <#
-
-            #>
+            $CheckContent -Match "prohibited mobile code" -or
+            $CheckContent -Match "SharePoint server configuration to ensure a session lock" -or
+            $CheckContent -Match "ensure user sessions are terminated upon user logoff" -or
+            $CheckContent -Match "ensure access to the online web part gallery is configured"
 
             <#continue with adding statements that match anything that would be a SP rule#>
         )

@@ -6,7 +6,7 @@
 
 <#
         .SYNOPSIS
-            This is a placeholder for the SharePointRuleGetScript block.
+            This is a placeholder for the SharePointGetScript block.
         
         .DESCRIPTION
             
@@ -14,8 +14,8 @@
         .PARAMETER CheckContent
             
 #>
-#update this for SharePoint Get/Test/Set scripts
-function Get-SharePointRuleGetScript
+
+function Get-SharePointGetScript
 {
     [CmdletBinding()]
     [OutputType([string])]
@@ -40,7 +40,7 @@ function Get-SharePointRuleGetScript
         
 #>
 
-function Get-SharePointRuleTestScript
+function Get-SharePointTestScript
 {
     [CmdletBinding()]
     [OutputType([string])]
@@ -68,7 +68,7 @@ function Get-SharePointRuleTestScript
         
 #>
 
-function Get-SharePointRuleSetScript
+function Get-SharePointSetScript
 {
     [CmdletBinding()]
     [OutputType([string])]
@@ -202,83 +202,6 @@ function Get-PermissionSetScript
 }
 
 #End Permissions region
-
-#Begin SharePointRule region
-
-function Get-SharePointRuleGetScript
-{
-    [CmdletBinding()]
-    [OutputType([string])]
-    [CmdletBinding()]
-    param
-    (
-        [Parameter(Mandatory = $false)]
-        [AllowEmptyString()]
-        $CheckContent
-    )
-
-    return
-}
-
-<#
-    .SYNOPSIS
-        Placeholder for SharePointRuleTestScript
-
-    .DESCRIPTION
-        
-    .PARAMETER CheckContent
-        
-#>
-
-function Get-SharePointRuleTestScript
-{
-    [CmdletBinding()]
-    [OutputType([string])]
-    [CmdletBinding()]
-    param
-    (
-        [Parameter(Mandatory = $false)]
-        [AllowEmptyString()]
-        $CheckContent
-    )
-
-        return
-    
-}
-
-<#
-    .SYNOPSIS Get-SharePointRuleSetScript
-        Placeholder for SharePointRuleSetScript
-    .DESCRIPTION
-        
-    .PARAMETER FixText
-        
-
-    .PARAMETER CheckContent
-        
-#>
-
-function Get-SharePointRuleSetScript
-{
-    [CmdletBinding()]
-    [OutputType([string])]
-    [CmdletBinding()]
-    param
-    (
-        [Parameter()]
-        [AllowEmptyString()]
-        [string[]]
-        $FixText,    
-
-        [Parameter(Mandatory = $false)]
-        [AllowEmptyString()]
-        $CheckContent
-    )
-
-        return
-}
-
-#End SharePointRule region
 
 #Begin SPIrmSettingsRule region
 
@@ -535,13 +458,13 @@ function Get-SharePointRuleSubType
     {
         
         {
-            $PSItem -Match "DoDI 8552.01" #-or #V-59957
-            #$PSItem -Match "session time-out" -or #V-59919
-            #$PSItem -Match "Unique session IDs" -or #V-59977
-            #$PSItem -Match "MSNBC online gallery" #V-59991
+            $PSItem -Match "prohibited mobile code" -or #V-59957
+            $PSItem -Match "SharePoint server configuration to ensure a session lock" -or #V-59919
+            $PSItem -Match "ensure user sessions are terminated upon user logoff" -or #V-59977
+            $PSItem -Match "ensure access to the online web part gallery is configured" #V-59991
         }
         {
-            #$ruleType = "SharePointDsc"
+            $ruleType = "SharePoint"
         }
 
         <# {

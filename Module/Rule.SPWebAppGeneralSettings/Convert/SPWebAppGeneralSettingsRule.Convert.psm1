@@ -145,7 +145,7 @@ Class SPWebAppGeneralSettingsRuleConvert : SPWebAppGeneralSettingsRule
     #>
     [string] GetRuleType ([string[]] $CheckContent)
     {
-        $ruleType = Get-SPWebAppGeneralSettingsRule -CheckContent $CheckContent
+        $ruleType = Get-SPWebAppGeneralSettingsRuleSubType -CheckContent $CheckContent
 
         return $ruleType
     }
@@ -166,7 +166,10 @@ Class SPWebAppGeneralSettingsRuleConvert : SPWebAppGeneralSettingsRule
     {
         if
         (
-            $CheckContent -Match "The DoDI 8552.01 policy pertains to the use of mobile code technologies within DoD information systems"
+            $CheckContent -Match "prohibited mobile code" -or
+            $CheckContent -Match "SharePoint server configuration to ensure a session lock" -or
+            $CheckContent -Match "ensure user sessions are terminated upon user logoff" -or
+            $CheckContent -Match "ensure access to the online web part gallery is configured"
         )
         {
             return $true

@@ -2,7 +2,7 @@
 # Licensed under the MIT License.
 #region Method Functions
 
-function Get-SPWebAppGeneralSettingsRuleGetScript
+function Get-SPWebAppGeneralSettingsGetScript
 {
     [CmdletBinding()]
     [OutputType([string])]
@@ -18,7 +18,7 @@ function Get-SPWebAppGeneralSettingsRuleGetScript
 }
 
 
-function Get-SPWebAppGeneralSettingsRuleTestScript
+function Get-SPWebAppGeneralSettingsTestScript
 {
     [CmdletBinding()]
     [OutputType([string])]
@@ -34,7 +34,7 @@ function Get-SPWebAppGeneralSettingsRuleTestScript
     
 }
 
-function Get-SPWebAppGeneralSettingsRuleSetScript
+function Get-SPWebAppGeneralSettingsSetScript
 {
     [CmdletBinding()]
     [OutputType([string])]
@@ -54,7 +54,7 @@ function Get-SPWebAppGeneralSettingsRuleSetScript
         return
 }
 
-function Get-SPWebAppGeneralSettingsRule
+function Get-SPWebAppGeneralSettingsRuleSubType
 {
     [CmdletBinding()]
     [OutputType([string])]
@@ -71,10 +71,13 @@ function Get-SPWebAppGeneralSettingsRule
     {
         
         {
-            $PSItem -Match 'The DoDI 8552.01 policy pertains to the use of mobile code technologies within DoD information systems' #V-59957
+            $PSItem -Match "prohibited mobile code" -or #V-59957
+            $PSItem -Match "SharePoint server configuration to ensure a session lock" -or #V-59919
+            $PSItem -Match "ensure user sessions are terminated upon user logoff" -or #V-59977
+            $PSItem -Match "ensure access to the online web part gallery is configured" #V-59991
         }
         {
-            $ruleType = 'SPWebAppGeneralSettings'
+            $ruleType = "SPWebAppGeneralSettings"
         }
 
         default

@@ -204,7 +204,7 @@ class ConvertFactory
                 $null = $ruleTypeList.Add(
                     [SPWebAppGeneralSettingsRuleConvert]::new($Rule).AsRule()
                 )
-            }
+            }#>
             <#{[SharePointRuleConvert]::Match($PSItem)}
             {
                 $null = $ruleTypeList.Add(
