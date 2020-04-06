@@ -157,7 +157,7 @@ Class SharePointRuleConvert : SharePointRule
     {
         if($null -eq $this.DuplicateOf)
         {
-            $this.DscResource = 'SharePoint'
+            $this.DscResource = 'SharePointDsc'
         }
         else
         {
@@ -173,10 +173,10 @@ Class SharePointRuleConvert : SharePointRule
         #>
         if
         (
-            $CheckContent -Match "DoDI 8552.01" -or #V-59957
-            $CheckContent -Match "session time-out" -or #V-59919
-            $CheckContent -Match "Unique session IDs" -or #V-59977
-            $CheckContent -Match "MSNBC online gallery" #-or #V-59991
+            $CheckContent -Match "DoDI 8552.01" #-or #V-59957
+            #$CheckContent -Match "session time-out" -or #V-59919
+            #$CheckContent -Match "Unique session IDs" -or #V-59977
+            #$CheckContent -Match "MSNBC online gallery" #-or #V-59991
             #$CheckContent -Match "Configure information rights management" -or #V-59941, V-59945, V-59947, V-59973 #get more specific match statement
             #$CheckContent -Match "isolation boundary" -or #V-59981, V-59983
             #$CheckContent -Match "SharePoint site collection administrator" -or #V-60007

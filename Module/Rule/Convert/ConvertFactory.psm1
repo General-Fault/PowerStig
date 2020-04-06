@@ -18,7 +18,6 @@ using module .\..\..\Rule.Registry\Convert\RegistryRule.Convert.psm1
 using module .\..\..\Rule.SecurityOption\Convert\SecurityOptionRule.Convert.psm1
 using module .\..\..\Rule.Service\Convert\ServiceRule.Convert.psm1
 using module .\..\..\Rule.SharePoint\Convert\SharePointRule.Convert.psm1
-using module .\..\..\Rule.SPWebAppGeneralSettings\Convert\SPWebAppGeneralSettingsRule.Convert.psm1
 using module .\..\..\Rule.SqlScriptQuery\Convert\SqlScriptQueryRule.Convert.psm1
 using module .\..\..\Rule.UserRight\Convert\UserRightRule.Convert.psm1
 using module .\..\..\Rule.WebAppPool\Convert\WebAppPoolRule.Convert.psm1
@@ -27,6 +26,7 @@ using module .\..\..\Rule.WindowsFeature\Convert\WindowsFeatureRule.Convert.psm1
 using module .\..\..\Rule.WinEventLog\Convert\WinEventLogRule.Convert.psm1
 using module .\..\..\Rule.AuditSetting\Convert\AuditSettingRule.Convert.psm1
 using module .\..\..\Rule.SslSettings\Convert\SslSettingsRule.Convert.psm1
+using module .\..\..\Rule.SPWebAppGeneralSettings\Convert\SPWebAppGeneralSettingsRule.Convert.psm1
 
 # Header
 

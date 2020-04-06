@@ -33,6 +33,7 @@ data dscResourceModule
         SecurityOptionRule              = SecurityPolicyDsc
         ServiceRule                     = PSDscResources
         SharePointRule                  = SharePointDsc
+        SPWebAppGeneralSettingsRule     = SPWebAppGeneralSettings
         SqlScriptQueryRule              = SqlServerDsc
         UserRightRule                   = SecurityPolicyDsc
         WebAppPoolRule                  = xWebAdministration

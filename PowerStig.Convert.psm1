@@ -5,7 +5,7 @@
 <#
     A funny note if you have OCD. The order of the dot sourced files is important due to the way
     that PowerShell processes the files (Top/Down). The Classes in the module depend on the
-    enumerations, so if you want to alphabetize this list, don't. PowerShell with throw an error
+    enumerations, so if you want to alphabetize this list, don't. PowerShell will throw an error
     indicating that the enumerations can't be found, if you try to load the classes before the
     enumerations.
 #>

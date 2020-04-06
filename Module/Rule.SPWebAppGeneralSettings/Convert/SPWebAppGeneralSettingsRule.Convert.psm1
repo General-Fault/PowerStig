@@ -15,12 +15,9 @@ foreach ($supportFile in $supportFileList)
 
 <#
     .SYNOPSIS
-        Convert the contents of an xccdf check-content element into a SharePointRule object
+        
     .DESCRIPTION
-        The SharePointRule class is used to extract the SharePoint Settings from
-        the check-content of the xccdf. Once a STIG rule is identified as an
-        SharePoint rule, it is passed to the SharePointRuleConvert class for parsing
-        and validation.
+        
 #>
 Class SPWebAppGeneralSettingsRuleConvert : SPWebAppGeneralSettingsRule
 {
@@ -148,7 +145,7 @@ Class SPWebAppGeneralSettingsRuleConvert : SPWebAppGeneralSettingsRule
     #>
     [string] GetRuleType ([string[]] $CheckContent)
     {
-        $ruleType = Get-SPWebAppGeneralSettingsRuleSubType -CheckContent $CheckContent
+        $ruleType = Get-SPWebAppGeneralSettingsRule -CheckContent $CheckContent
 
         return $ruleType
     }
@@ -167,26 +164,9 @@ Class SPWebAppGeneralSettingsRuleConvert : SPWebAppGeneralSettingsRule
 
     static [bool] Match ([string] $CheckContent)
     {
-        <# 
-            Provide match criteria to validate that the rule is (or is not) a SharePoint rule.
-            Standard match rules
-        #>
         if
         (
-            $CheckContent -Match "DoDI 8552.01" -or #V-59957
-            $CheckContent -Match "session time-out" -or #V-59919
-            $CheckContent -Match "Unique session IDs" -or #V-59977
-            $CheckContent -Match "MSNBC online gallery" #-or #V-59991
-            #$CheckContent -Match "Configure information rights management" -or #V-59941, V-59945, V-59947, V-59973 #get more specific match statement
-            #$CheckContent -Match "isolation boundary" -or #V-59981, V-59983
-            #$CheckContent -Match "SharePoint site collection administrator" -or #V-60007
-            #$CheckContent -Match "SQL Server Management Console" #-or #V-59999, V-60003 #get more specific match statement
-
-            <#
-
-            #>
-
-            <#continue with adding statements that match anything that would be a SP rule#>
+            $CheckContent -Match "The DoDI 8552.01 policy pertains to the use of mobile code technologies within DoD information systems"
         )
         {
             return $true

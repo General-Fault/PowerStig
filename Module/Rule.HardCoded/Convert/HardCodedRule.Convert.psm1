@@ -17,6 +17,7 @@ using module .\..\..\Rule.Registry\RegistryRule.psm1
 using module .\..\..\Rule.SecurityOption\SecurityOptionRule.psm1
 using module .\..\..\Rule.Service\ServiceRule.psm1
 using module .\..\..\Rule.SharePoint\SharePointRule.psm1
+using module .\..\..\Rule.SPWebAppGeneralSettings\SPWebAppGeneralSettingsRule.psm1
 using module .\..\..\Rule.SqlScriptQuery\SqlScriptQueryRule.psm1
 using module .\..\..\Rule.UserRight\UserRightRule.psm1
 using module .\..\..\Rule.WebAppPool\WebAppPoolRule.psm1

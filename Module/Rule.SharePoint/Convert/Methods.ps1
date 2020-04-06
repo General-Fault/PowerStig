@@ -6,7 +6,7 @@
 
 <#
         .SYNOPSIS
-            This is a placeholder for the SPWebAppGeneralSettingsRuleGetScript block.
+            This is a placeholder for the SharePointRuleGetScript block.
         
         .DESCRIPTION
             
@@ -14,8 +14,8 @@
         .PARAMETER CheckContent
             
 #>
-#update this for SPWebAppGeneralSettings Get/Test/Set scripts
-function Get-SPWebAppGeneralSettingsRuleGetScript
+#update this for SharePoint Get/Test/Set scripts
+function Get-SharePointRuleGetScript
 {
     [CmdletBinding()]
     [OutputType([string])]
@@ -32,7 +32,7 @@ function Get-SPWebAppGeneralSettingsRuleGetScript
 
 <#
     .SYNOPSIS
-        Placeholder for SPWebAppGeneralSettingsRuleTestScript
+        Placeholder for SharePointRuleTestScript
 
     .DESCRIPTION
         
@@ -40,7 +40,7 @@ function Get-SPWebAppGeneralSettingsRuleGetScript
         
 #>
 
-function Get-SPWebAppGeneralSettingsRuleTestScript
+function Get-SharePointRuleTestScript
 {
     [CmdletBinding()]
     [OutputType([string])]
@@ -57,8 +57,8 @@ function Get-SPWebAppGeneralSettingsRuleTestScript
 }
 
 <#
-    .SYNOPSIS Get-SPWebAppGeneralSettingsRuleSetScript
-        Placeholder for SPWebAppGeneralSettingsRuleSetScript
+    .SYNOPSIS Get-SharePointRuleSetScript
+        Placeholder for SharePointRuleSetScript
     .DESCRIPTION
         
     .PARAMETER FixText
@@ -68,7 +68,7 @@ function Get-SPWebAppGeneralSettingsRuleTestScript
         
 #>
 
-function Get-SPWebAppGeneralSettingsRuleSetScript
+function Get-SharePointRuleSetScript
 {
     [CmdletBinding()]
     [OutputType([string])]
@@ -88,7 +88,7 @@ function Get-SPWebAppGeneralSettingsRuleSetScript
         return
 }
 
-#End SPWebAppGeneralSettings region
+#End SharePoint region
 
 #Begin Permissions region
 
@@ -535,13 +535,13 @@ function Get-SharePointRuleSubType
     {
         
         {
-            $PSItem -Match "DoDI 8552.01" -or #V-59957
-            $PSItem -Match "session time-out" -or #V-59919
-            $PSItem -Match "Unique session IDs" -or #V-59977
-            $PSItem -Match "MSNBC online gallery" #V-59991
+            $PSItem -Match "DoDI 8552.01" #-or #V-59957
+            #$PSItem -Match "session time-out" -or #V-59919
+            #$PSItem -Match "Unique session IDs" -or #V-59977
+            #$PSItem -Match "MSNBC online gallery" #V-59991
         }
         {
-            $ruleType = "SPWebAppGeneralSettings"
+            #$ruleType = "SharePointDsc"
         }
 
         <# {

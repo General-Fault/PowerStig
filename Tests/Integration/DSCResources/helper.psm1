@@ -84,6 +84,10 @@ function Get-ResourceMatchStatement
         {
             return '\[SharePoint\]'
         }
+        'SPWebAppGeneralSettingsRule'
+        {
+            return '\[SPWebAppGeneralSettings\]'
+        }
         'SqlScriptQueryRule'
         {
             return '\[SqlScriptQuery\]'
